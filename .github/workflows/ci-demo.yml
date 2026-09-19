@@ -56,6 +56,7 @@ jobs:
             - name: Build and Push to Docker Hub
               uses: docker/build-push-action@v7
               with:
+                  context: .
                   push: true
                   tags: |
                       ${{secrets.DOCKER_USERNAME}}/spring-app:latest
