@@ -3,8 +3,8 @@ name: spring-boot-app-demo
 on:
     workflow_dispatch:
     push:
-        paths:
-            - "docker/"
+        # paths:
+        #     - "docker/"
 
 jobs:
     build-test:
