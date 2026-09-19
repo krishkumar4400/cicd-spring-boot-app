@@ -54,4 +54,10 @@ jobs:
                   password: ${{ secrets.DOCKER_PASSWORD }}
 
             - name: Build and Push to Docker Hub
-              run: echo "push image to docker hub"
+              uses: docker/build-push-action@v7
+              with:
+                  push: true
+                  tags: |
+                      ${{secrets.DOCKER_USERNAME}}/spring-app:latest
+                      ${{secrets.DOCKER_USERNAME}}/spring-app:${{github.ref_name}}
+                      ${{secrets.DOCKER_USERNAME}}/spring-app:${{github.sha}}
