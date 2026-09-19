@@ -3,8 +3,13 @@ name: spring-boot-app-demo
 on:
     workflow_dispatch:
     push:
-        # paths:
-        #     - "docker/"
+        paths:
+            - "src/**"
+            - "pom.xml"
+            - "mvnw"
+            - "mvnw.cmd"
+            - "Dockerfile"
+            - ".github/workflows/ci-demo.yml"
 
 jobs:
     build-test:
